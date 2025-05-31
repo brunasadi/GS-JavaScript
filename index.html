@@ -1,52 +1,60 @@
-<!-- teste -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div>
-          <a href="index.html"
-            ><img id="logo" src="src/assets/img/logo_nivellus.png" alt=""
-          /></a>
-        </div>
-        <ul>
-          <li>
-            <a href="src/pages/pag2.html" class="nav-link">2</a>
-          </li>
-          <li>
-            <a href="src/pages/pag3.html" class="nav-link">3</a>
-          </li>
-          <li>
-            <a href="src/pages/pag4.html" class="nav-link">4</a>
-          </li>
-          <li>
-            <a href="src/pages/pag5.html" class="nav-link">5</a>
-          </li>
-          <li>
-            <a href="src/pages/pag6.html" class="nav-link">6</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h1>Investir em preveção é melhor doque em reparação</h1>
-      <img src="src/assets/img/indeximg.png" alt="#" />
-      <h2>
-        Mais de 3 milhões de brasileiros foram impactados por enchentes em 2023.
-        Cidades sofrem com perdas humanas, danos materiais e crises prolongadas.
-      </h2>
-      <h2>
-        Falta um sistema de alerta acessível e integrado. Com tecnologia,
-        podemos prever e agir antes que o pior aconteça.
-      </h2>
-    </main>
-    <footer></footer>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Enchentes</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#"><img id="logo" src="./src/assets/img/logo_nivellus.png" alt="Logo" /></a>
+      <button class="hamburguer" id="btn-menu" aria-label="Abrir menu">&#9776;</button>
+      <ul id="menu" class="lista-menu">
+        <li><a class="nav-link" href="#slide">SlideShow</a></li>
+        <li><a class="nav-link" href="#quiz">Quiz</a></li>
+        <li><a class="nav-link" href="#form">Formulário</a></li>
+      </ul>
+       <div class="theme-icons">
+        <button class="theme-btn" data-color="#fff" style="background:#fff;"></button>
+        <button class="theme-btn" data-color="#000" style="background:#000;"></button>
+        <button class="theme-btn" data-color="#4378a7" style="background:#4378a7;"></button>
+        <button class="theme-btn" data-color="#a3a2a7" style="background:#a3a2a7;"></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="slide" class="slide-container">
+      <div class="imagem"><img src="./src/assets/img/img1.png" alt="Imagem 1"></div>
+      <div class="imagem"><img src="./src/assets/img/img2.png" alt="Imagem 2"></div>
+      <div class="imagem"><img src="./src/assets/img/img3.png" alt="Imagem 3"></div>
+      <button class="seta esquerda">&#10094;</button>
+      <button class="seta direita">&#10095;</button>
+    </section>
+
+    <section id="quiz" class="quiz">
+      <h2>Quiz: Você entende sobre enchentes?</h2>
+      <div class="pergunta" id="textoPergunta"></div>
+      <div id="opcoes"></div>
+      <button id="btnResponder">Responder</button>
+      <div id="resultadoFinal" class="resultado-final"></div>
+    </section>
+
+    <section id="form" class="duvidas">
+      <form id="formDuvidas">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <div id="erroEmail" class="erro"></div>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+        <div id="erroMensagem" class="erro"></div>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="src/js/script.js"></script>
+</body>
 </html>
