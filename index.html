@@ -1,92 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SlideShow//Quiz//formulário//Tema</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Menu Hambúrguer -->
-    <nav class="menu-navegacao">
-      <div class="logo">MinhaPágina</div>
-
-      <!-- Ícone hambúrguer -->
-      <div class="icone-hamburguer" id="btn-menu">&#9776;</div>
-
-      <!-- Itens do menu -->
-      <ul class="lista-menu" id="menu">
-        <li><a href="#slideShow">SlideShow</a></li>
-        <li><a href="#quiz">Quiz</a></li>
-        <li><a href="#formDuvidas">Dúvidas</a></li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Enchentes</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#"><img id="logo" src="./src/assets/img/logo_nivellus.png" alt="Logo" /></a>
+      <button class="hamburguer" id="btn-menu" aria-label="Abrir menu">&#9776;</button>
+      <ul id="menu" class="lista-menu">
+        <li><a class="nav-link" href="#slide">SlideShow</a></li>
+        <li><a class="nav-link" href="#quiz">Quiz</a></li>
+        <li><a class="nav-link" href="#form">Formulário</a></li>
       </ul>
+       <div class="theme-icons">
+        <button class="theme-btn" data-color="#fff" style="background:#fff;"></button>
+        <button class="theme-btn" data-color="#000" style="background:#000;"></button>
+        <button class="theme-btn" data-color="#4378a7" style="background:#4378a7;"></button>
+        <button class="theme-btn" data-color="#a3a2a7" style="background:#a3a2a7;"></button>
+      </div>
     </nav>
+  </header>
 
-    <!-- Menu de navegação para mudar cor do fundo -->
-    <nav id="menuCores" style="text-align: center; margin: 20px 0">
-      <span
-        class="icone-cor"
-        data-cor="#d29bfd"
-        title="Fundo Lilas"
-        style="cursor: pointer; font-size: 24px; margin: 0 10px"
-        >🟣</span
-      >
-      <span
-        class="icone-cor"
-        data-cor="#cceeff"
-        title="Fundo azul claro"
-        style="cursor: pointer; font-size: 24px; margin: 0 10px"
-        >🔵</span
-      >
-      <span
-        class="icone-cor"
-        data-cor="#ffe6cc"
-        title="Fundo laranja claro"
-        style="cursor: pointer; font-size: 24px; margin: 0 10px"
-        >🟠</span
-      >
-    </nav>
+  <main>
+    <section id="slide" class="slide-container">
+      <div class="imagem"><img src="./src/assets/img/img1.png" alt="Imagem 1"></div>
+      <div class="imagem"><img src="./src/assets/img/img2.png" alt="Imagem 2"></div>
+      <div class="imagem"><img src="./src/assets/img/img3.png" alt="Imagem 3"></div>
+      <button class="seta esquerda">&#10094;</button>
+      <button class="seta direita">&#10095;</button>
+    </section>
 
-    <!-- Slide Show -->
-    <div class="slide-container" id="slideShow">
-      <span class="seta esquerda" onclick="mudarImagem(-1)">&#10094;</span>
-      <div class="imagem"><img src="./img/img1.png" alt="Imagem 1" /></div>
-      <div class="imagem"><img src="./img/img2.png" alt="Imagem 2" /></div>
-      <div class="imagem"><img src="./img/img3.png" alt="Imagem 3" /></div>
-      <span class="seta direita" onclick="mudarImagem(1)">&#10095;</span>
-    </div>
-
-    <!-- Quiz -->
-    <h2 id="quiz">Quiz: Você entende sobre enchentes?</h2>
-    <div class="quiz">
+    <section id="quiz" class="quiz">
+      <h2>Quiz: Você entende sobre enchentes?</h2>
       <div class="pergunta" id="textoPergunta"></div>
       <div id="opcoes"></div>
-      <button onclick="responder()">Responder</button>
-    </div>
+      <button id="btnResponder">Responder</button>
+      <div id="resultadoFinal" class="resultado-final"></div>
+    </section>
 
-    <!-- Formulário -->
-    <h2 id="formDuvidas">Envie sua dúvida</h2>
-    <form id="formDuvidas" novalidate>
-      <label for="email">Email (obrigatório):</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="seuemail@exemplo.com"
-        required
-      />
-      <div id="erroEmail" class="erro"></div>
-      <label for="duvida">Sua dúvida:</label>
-      <textarea
-        id="duvida"
-        name="duvida"
-        rows="5"
-        placeholder="Escreva sua dúvida aqui..."
-      ></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <div id="mensagem" class="sucesso"></div>
+    <section id="form" class="duvidas">
+      <form id="formDuvidas">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <div id="erroEmail" class="erro"></div>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+        <div id="erroMensagem" class="erro"></div>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="src/js/script.js"></script>
+</body>
 </html>
