@@ -34,7 +34,7 @@ document.querySelector(".seta.esquerda").addEventListener("click", () => mudarIm
 document.querySelector(".seta.direita").addEventListener("click", () => mudarImagem(1));
 document.addEventListener("DOMContentLoaded", () => mostrarImagem(imagemAtual));
 
-// Quiz com feedback
+// Quiz com respostas corretas
 const perguntas = [
   { pergunta: "O que é uma enchente?", opcoes: ["Aumento da umidade", "Falta de água potável", "Transbordamento de rios", "Queda da temperatura"], correta: 2 },
   { pergunta: "Principal causa de enchentes urbanas?", opcoes: ["Ventos", "Impermeabilização do solo", "Tempestades solares", "Desmatamento"], correta: 1 },
